@@ -20,7 +20,6 @@ def change_percentage_of_day(open_value, close_value):
     
     return round(percentage_change, 2) #rounds to two decimal points
     
-
     
 def change_of_day(open_value, close_value):
 

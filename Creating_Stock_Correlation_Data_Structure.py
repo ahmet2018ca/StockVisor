@@ -20,7 +20,6 @@ def change_percentage_of_day(open_value, close_value):
     
 
 
-    
 def change_of_day(open_value, close_value):
 
     change_of_day = float(close_value) - float(open_value)
