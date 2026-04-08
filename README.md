@@ -1,8 +1,49 @@
-# StockVisor Quant Edition
+# StockVisor Quant Edition 📈
 
-StockVisor is a live-data stock analysis tool that blends guided user prompts, quantitative risk analysis, and interactive visualization into one workflow. You choose one stock for a deep dive or a group of stocks for comparison, and StockVisor pulls fresh market data, computes quant metrics, explains what they mean, and generates an HTML dashboard.
+<p align="center">
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img alt="Live market data" src="https://img.shields.io/badge/Live_Market_Data-Yahoo_Finance-12824C?style=for-the-badge" />
+  <img alt="Quant risk analytics" src="https://img.shields.io/badge/Quant-Risk_Analytics-0F4C81?style=for-the-badge" />
+  <img alt="Portfolio optimization" src="https://img.shields.io/badge/Portfolio-Optimization-C46B2E?style=for-the-badge" />
+  <img alt="Interactive dashboard" src="https://img.shields.io/badge/Dashboard-Plotly_HTML-A23E48?style=for-the-badge&logo=plotly&logoColor=white" />
+</p>
 
-At a high level, this project answers questions like:
+**StockVisor is a live-data stock research engine that turns raw ticker history into a quant-style workflow, a guided CLI experience, and an interactive dashboard.**
+
+> [!IMPORTANT]
+> **Why this feels high-tech:** StockVisor does more than print a chart or dump a few ratios. It pulls live market data, computes serious risk and performance metrics, studies benchmark behavior, analyzes how assets move together, and packages everything into a report that feels closer to a mini research terminal than a classroom script.
+
+## Why StockVisor Feels High-Tech 🚀
+
+| Signal | Why it stands out |
+| --- | --- |
+| 📡 Live market pipeline | Pulls fresh Yahoo Finance data instead of relying on stale local CSVs. |
+| 🧠 Quant analysis engine | Computes CAGR, Sharpe, Sortino, beta, alpha, drawdown, RSI, MACD, VaR, and more. |
+| 🔗 Cross-asset intelligence | Measures correlation, cointegration, and rolling beta so you can study relationships, not just isolated charts. |
+| 🧪 Portfolio optimization | Tests long-only portfolio mixes to see whether a basket can beat a single-name risk profile. |
+| 🖥️ Polished output | Combines a guided CLI, plain-English explanations, and a shareable Plotly HTML dashboard. |
+
+## What This Project Does ⚡
+
+StockVisor turns raw market history into a research-style report that is easy to use, visually polished, and technically serious.
+
+You choose:
+
+- 🎯 the stock or stocks to study
+- 🧭 a benchmark like `SPY` or `QQQ`
+- ⏳ a lookback window such as `1`, `3`, or `5` years
+- 🏦 a risk-free rate
+
+Then StockVisor:
+
+1. 📥 downloads live market data from Yahoo Finance via `yfinance`
+2. 🏗️ engineers return, volatility, drawdown, and momentum features
+3. 📐 computes quant metrics such as CAGR, Sharpe, Sortino, beta, alpha, and max drawdown
+4. 🔍 compares multiple assets using correlation, cointegration, and long-only portfolio optimization
+5. 💬 prints plain-English explanations in the CLI
+6. 📊 writes an interactive HTML dashboard
+
+## Questions It Helps Answer 🔍
 
 - Which stock compounded the fastest?
 - Which stock had the roughest ride?
@@ -11,41 +52,31 @@ At a high level, this project answers questions like:
 - Was the return strong enough to justify the risk?
 - If I combine these names, is there a cleaner risk/return mix?
 
-This README is written in two layers:
+<details>
+<summary><strong>✨ What makes this more than a basic stock script?</strong></summary>
 
-- Non-technical: what the tool does and how to use it
-- Technical: how the code is structured and how the math works
+- It blends data retrieval, financial analytics, statistical modeling, CLI UX, and interactive reporting in one workflow.
+- It explains the analysis in plain English, which makes the output more useful to non-technical users.
+- It produces a shareable HTML artifact, so the project feels like a finished tool instead of a one-off calculation.
 
-## What This Project Does
+</details>
 
-StockVisor turns raw market history into a research-style report.
+## Who This Is For 🎯
 
-You pick:
+This project works well for several audiences:
 
-- the stock or stocks to study
-- a benchmark like `SPY` or `QQQ`
-- a lookback window such as `1`, `3`, or `5` years
-- a risk-free rate
+- 📘 Non-technical users who want a guided stock research tool
+- 🎓 Students learning investing, risk, and portfolio math
+- 🐍 Python developers interested in financial analytics workflows
+- 📊 Data-oriented users who want clearer explanations of common quant metrics
+- 💼 Portfolio reviewers who want to see analytics, UX, and visualization in one polished project
 
-Then StockVisor:
+> [!TIP]
+> This README is intentionally split into two layers:
+> - an easy-start section up top for quick understanding
+> - a deeper technical section below for architecture, math, and implementation details
 
-1. downloads live market data from Yahoo Finance via `yfinance`
-2. engineers return, volatility, drawdown, and momentum features
-3. computes quant metrics such as CAGR, Sharpe, Sortino, beta, and max drawdown
-4. compares multiple assets using correlation, cointegration, and long-only portfolio optimization
-5. prints plain-English explanations in the CLI
-6. writes an interactive HTML dashboard
-
-## Who This Is For
-
-This project works for several audiences:
-
-- Non-technical users who want a guided stock research tool
-- Students learning investing, risk, and portfolio math
-- Python developers interested in financial analytics workflows
-- Data-oriented users who want a stronger explanation of what common quant metrics actually mean
-
-## Repo Structure
+## Repo Structure 🗂️
 
 ```text
 StockVisor/
@@ -62,17 +93,17 @@ StockVisor/
     └── reporting.py
 ```
 
-## Architecture
+## Architecture 🏗️
 
 ### Entry Point
 
-[StockVisor.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\StockVisor.py)
+[StockVisor.py](./StockVisor.py)
 
 This is the thin launcher. It simply calls the package CLI entrypoint.
 
 ### CLI Layer
 
-[cli.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\stockvisor\cli.py)
+[cli.py](./stockvisor/cli.py)
 
 Responsibilities:
 
@@ -84,7 +115,7 @@ Responsibilities:
 
 ### Market Data Layer
 
-[market_data.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\stockvisor\market_data.py)
+[market_data.py](./stockvisor/market_data.py)
 
 Responsibilities:
 
@@ -95,7 +126,7 @@ Responsibilities:
 
 ### Analytics Layer
 
-[analytics.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\stockvisor\analytics.py)
+[analytics.py](./stockvisor/analytics.py)
 
 Responsibilities:
 
@@ -108,7 +139,7 @@ Responsibilities:
 
 ### Reporting Layer
 
-[reporting.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\stockvisor\reporting.py)
+[reporting.py](./stockvisor/reporting.py)
 
 Responsibilities:
 
@@ -119,7 +150,7 @@ Responsibilities:
 
 ### Models
 
-[models.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\stockvisor\models.py)
+[models.py](./stockvisor/models.py)
 
 Responsibilities:
 
@@ -128,7 +159,7 @@ Responsibilities:
 - stores pair-analysis results
 - stores optimized portfolio outputs
 
-## Technology Stack
+## Technology Stack ⚙️
 
 ### Core Libraries
 
@@ -178,7 +209,7 @@ Responsibilities:
 - provides live remote market data
 - avoids the old local-CSV workflow
 
-## Installation
+## Installation 🛠️
 
 From the project folder:
 
@@ -186,13 +217,13 @@ From the project folder:
 pip install -e .
 ```
 
-If your default `python` does not have `pip`, use the Python install that does:
+If your default `python` does not have `pip`, a Windows-friendly fallback is:
 
 ```powershell
-& 'C:\Users\Ahmet\AppData\Local\Python\PythonCore-3.14-64\python.exe' -m pip install -e .
+py -m pip install -e .
 ```
 
-## Running The Project
+## Running The Project ▶️
 
 ### Guided Interactive Mode
 
@@ -233,7 +264,7 @@ Sector comparison:
 python StockVisor.py --symbols JPM BAC C GS --benchmark SPY --lookback-years 5 --risk-free-rate 0.04
 ```
 
-## What The Dashboard Shows
+## What The Dashboard Shows 📊
 
 The HTML report includes:
 
@@ -247,7 +278,7 @@ The HTML report includes:
 - Chart explanations
 - Quant-stat explanations
 
-## Quant Concepts Explained
+## Quant Concepts Explained 🧠
 
 This section is intentionally both practical and technical.
 
@@ -594,7 +625,7 @@ In this project:
 - total weights sum to `1`
 - no short selling is used
 
-## Technical Workflow
+## Technical Workflow 🔄
 
 The internal workflow is:
 
@@ -608,9 +639,9 @@ The internal workflow is:
 8. render CLI explanations
 9. render the Plotly HTML dashboard
 
-## Quant Math Used In Code
+## Quant Math Used In Code 📐
 
-The main quantitative computations live in [analytics.py](C:\CODES\RESUME__PROJECTS\STOCK__VISOR\StockVisor\stockvisor\analytics.py).
+The main quantitative computations live in [analytics.py](./stockvisor/analytics.py).
 
 Implemented families of computation include:
 
@@ -635,7 +666,7 @@ Implemented families of computation include:
 - max-Sharpe portfolio
 - minimum-volatility portfolio
 
-## Design Decisions
+## Design Decisions 🧩
 
 ### Why Live Data Instead of Local CSV Files
 
@@ -671,7 +702,7 @@ Quant tools often fail by assuming the user already knows the vocabulary. StockV
 
 So the project is not just computationally stronger, but more interpretable.
 
-## Limitations
+## Limitations ⚠️
 
 - Yahoo Finance data via `yfinance` is useful for research, not institutional execution
 - historical optimization is sensitive to the chosen lookback window
@@ -680,7 +711,7 @@ So the project is not just computationally stronger, but more interpretable.
 - cointegration is suggestive, not a full trading system
 - this is a research and educational tool, not financial advice
 
-## Future Directions
+## Future Directions 🚀
 
 Good technical extensions from here would include:
 
@@ -692,7 +723,7 @@ Good technical extensions from here would include:
 - exportable PDF reports
 - a web interface
 
-## Bottom Line
+## Bottom Line 💡
 
 StockVisor is no longer a toy stock script. It is now a structured quantitative analysis project with:
 
